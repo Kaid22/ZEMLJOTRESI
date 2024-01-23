@@ -18,7 +18,7 @@ function sha256(input) {
 }
 
 function fetchUserDatabase() {
-  return fetch("/JSON/LoginData.json")
+  return fetch("../JSON/LoginData.json")
     .then((response) => response.json())
     .then((data) => {
       localStorage.setItem("userDatabase", JSON.stringify(data));
@@ -35,7 +35,7 @@ function checkLogin(username, password) {
       user.username === username && user.hashedPassword === hashedPassword
   );
   if (user) {
-    window.location.href = "/HTML/Landing.html";
+    window.location.href = "../HTML/Landing.html";
     localStorage.setItem("loggedin", true);
   } else {
     console.log("Invalid username or password.");
