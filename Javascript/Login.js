@@ -1,3 +1,6 @@
+if (JSON.parse(localStorage.getItem("userDatabase") === null)) {
+  fetchUserDatabase().then();
+}
 function togglePasswordVisibility(button) {
   var passwordInput = document.getElementById("password");
   if (passwordInput.type === "password") {
@@ -28,9 +31,7 @@ function fetchUserDatabase() {
 
 function checkLogin(username, password) {
   const userDatabase = JSON.parse(localStorage.getItem("userDatabase"));
-  if (userDatabase === null) {
-    fetchUserDatabase();
-  }
+
   console.log(userDatabase);
 
   const existingUser = userDatabase.find((user) => user.username === username);
