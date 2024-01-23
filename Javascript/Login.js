@@ -29,15 +29,23 @@ function fetchUserDatabase() {
 function checkLogin(username, password) {
   const userDatabase = JSON.parse(localStorage.getItem("userDatabase")) || [];
   console.log(userDatabase);
-  const hashedPassword = sha256(password);
-  const user = userDatabase.find(
-    (user) =>
-      user.username === username && user.hashedPassword === hashedPassword
-  );
-  if (user) {
-    window.location.href = "../HTML/Landing.html";
-    localStorage.setItem("loggedin", true);
+
+  const existingUser = userDatabase.find((user) => user.username === username);
+
+  if (existingUser) {
+    const hashedPassword = sha256(password);
+    const user = userDatabase.find(
+      (user) =>
+        user.username === username && user.hashedPassword === hashedPassword
+    );
+
+    if (user) {
+      window.location.href = "../HTML/Landing.html";
+      localStorage.setItem("loggedin", true);
+    } else {
+      alert("Pogresna lozinka");
+    }
   } else {
-    console.log("Invalid username or password.");
+    alert("Korisničko ime ne postoji");
   }
 }
