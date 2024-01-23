@@ -196,5 +196,5 @@ function ProveriFormat() {
 }
 function loggedchecker() {
   if (localStorage.getItem("loggedin") != "true")
-    window.location.href = "/HTML/Login.html";
+    window.location.href = "../HTML/Login.html";
 }

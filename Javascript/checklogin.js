@@ -21,6 +21,6 @@ function ProveriLogin() {
 }
 function LoginIfNot() {
   if (localStorage.getItem("loggedin") != "true")
-    window.location.href = "/HTML/Login.html";
-  else window.location.href = "/HTML/SearchPage.html";
+    window.location.href = "../HTML/Login.html";
+  else window.location.href = "../HTML/SearchPage.html";
 }

@@ -2,17 +2,17 @@
 <html>
   <head>
     <title>Interactive Map with OpenStreetMap</title>
-    <link rel="stylesheet" href="/CSS/styles.css" />
-    <link rel="stylesheet" href="/CSS/Navbar.css" />
-    <link rel="stylesheet" href="/CSS/Login.css" />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/Navbar.css" />
+    <link rel="stylesheet" href="../CSS/Login.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Link to your CSS -->
   </head>
   <body>
     <nav class="navbar">
       <div class="logo">
-        <img src="/images/logo.png" alt="Logo" />
-        <a id="HomeLogo" href="Landing.html">EQLog</a>
+        <img src="../images/logo.png" alt="Logo" />
+        <a id="HomeLogo" href="../HTML/Landing.html">EQLog</a>
       </div>
       <div class="hamburger-icon">
         <div class="line"></div>
@@ -23,12 +23,10 @@
         <li><a class="link" href="#home">O nama</a></li>
         <li><a class="link" href="#about">Kontakt</a></li>
         <li>
-          <a class="link" href="SearchPage.html" onclick="LoginIfNot()"
-            >Pretraga</a
-          >
+          <a class="link" onclick="LoginIfNot()">Pretraga</a>
         </li>
         <li id="loginnav">
-          <a class="link" href="/HTML/Login.html">Uloguj se</a>
+          <a class="link" href="../HTML/Login.html">Uloguj se</a>
         </li>
         <li id="logoutnav">
           <a class="link" onclick="LogOut()">Izloguj se</a>
@@ -42,7 +40,7 @@
         <input type="password" placeholder="Potvrdi Lozinku" id="password2" />
         <button id="login" onclick="CheckAndAdd() ">Registruj se</button>
         <span id="register"
-          >Vec imas nalog? <a href="/HTML/Login.html">Uloguj se</a></span
+          >Vec imas nalog? <a href="../HTML/Login.html">Uloguj se</a></span
         >
       </div>
     </div>
@@ -55,8 +53,8 @@
         hamburger.classList.toggle("active");
       });
     </script>
-    <script src="/Javascript/checklogin.js"></script>
-    <script src="/Javascript/Register.js"></script>
+    <script src="../Javascript/checklogin.js"></script>
+    <script src="../Javascript/Register.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
   </body>
 </html>

@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/CSS/searchpage.css" />
-    <link rel="stylesheet" href="/CSS/Navbar.css" />
+    <link rel="stylesheet" href="../CSS/searchpage.css" />
+    <link rel="stylesheet" href="../CSS/Navbar.css" />
     <title>Document</title>
   </head>
   <body>
     <nav class="navbar">
       <div class="logo">
-        <img src="/images/logo.png" alt="Logo" />
-        <a id="HomeLogo" href="Landing.html">EQLog</a>
+        <img src="../images/logo.png" alt="Logo" />
+        <a id="HomeLogo" href="../HTML/Landing.html">EQLog</a>
       </div>
       <div class="hamburger-icon">
         <div class="line"></div>
@@ -22,12 +22,10 @@
         <li><a class="link" href="#home">O nama</a></li>
         <li><a class="link" href="#about">Kontakt</a></li>
         <li>
-          <a class="link" href="SearchPage.html" onclick="LoginIfNot()"
-            >Pretraga</a
-          >
+          <a class="link" onclick="LoginIfNot()">Pretraga</a>
         </li>
         <li id="loginnav">
-          <a class="link" href="/HTML/Login.html">Uloguj se</a>
+          <a class="link" href="../HTML/Login.html">Uloguj se</a>
         </li>
         <li id="logoutnav">
           <a class="link" onclick="LogOut()">Izloguj se</a>
@@ -214,7 +212,7 @@
         </div>
       </div>
     </div>
-    <script src="/Javascript/searchpagescript.js"></script>
+    <script src="../Javascript/searchpagescript.js"></script>
   </body>
   <script>
     const hamburger = document.querySelector(".hamburger-icon");
@@ -225,5 +223,5 @@
       hamburger.classList.toggle("active");
     });
   </script>
-  <script src="/Javascript/checklogin.js"></script>
+  <script src="../Javascript/checklogin.js"></script>
 </html>
