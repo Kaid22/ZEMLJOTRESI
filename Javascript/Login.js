@@ -28,7 +28,7 @@ function fetchUserDatabase() {
 
 function checkLogin(username, password) {
   const userDatabase = JSON.parse(localStorage.getItem("userDatabase"));
-  if (userDatabase == null) {
+  if (userDatabase === null) {
     fetchUserDatabase();
   }
   console.log(userDatabase);
