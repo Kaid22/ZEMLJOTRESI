@@ -53,18 +53,18 @@ body {
   cursor: pointer;
 }
 #globe {
-  background-image: url("/images/Globe-white.png");
+  background-image: url("../images/Globe-white.png");
   background-size: cover;
 }
 #globe.active {
-  background-image: url("/images/Globe-blue.png");
+  background-image: url("../images/Globe-blue.png");
   background-size: cover;
 }
 #list {
-  background-image: url("/images/List-white.png");
+  background-image: url("../images/List-white.png");
   background-size: cover;
 }
 #list.active {
-  background-image: url("/images/List-blue.png");
+  background-image: url("../images/List-blue.png");
   background-size: cover;
 }

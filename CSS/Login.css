@@ -58,7 +58,7 @@ input:focus {
   background-color: whitesmoke;
   width: 2.2rem;
   height: 2.2rem;
-  background-image: url("/images/1024px-Simple_Icon_Eye.svg.png");
+  background-image: url("../images/1024px-Simple_Icon_Eye.svg.png");
   background-size: cover;
   border: none;
   border-radius: 5px;
