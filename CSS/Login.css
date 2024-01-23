@@ -1,0 +1,74 @@
+#logincontainer {
+  background-color: #86c12d;
+  border-radius: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+#content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  margin: 1rem;
+  padding: 5px;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  height: 3rem;
+  font-size: 1.5rem;
+}
+#login {
+  margin: 1rem 0;
+  font-size: 2rem;
+  padding: 10px;
+  align-self: center;
+  border: none;
+  border-radius: 2px;
+  background-color: #256d1b;
+  color: white;
+}
+input:focus {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#passcontainer {
+  background: whitesmoke;
+  justify-content: space-between;
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+}
+#passcontainer input {
+  margin: 0;
+  width: 85%;
+}
+#passcontainer button {
+  background-color: whitesmoke;
+  width: 2.2rem;
+  height: 2.2rem;
+  background-image: url("/images/1024px-Simple_Icon_Eye.svg.png");
+  background-size: cover;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+#passcontainer button.active {
+  background-color: rgb(184, 184, 184);
+}
+#register {
+  align-self: center;
+}

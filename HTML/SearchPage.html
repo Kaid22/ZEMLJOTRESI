@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/searchpage.css" />
+    <link rel="stylesheet" href="/CSS/Navbar.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="/images/logo.png" alt="Logo" />
+        <a id="HomeLogo" href="Landing.html">EQLog</a>
+      </div>
+      <div class="hamburger-icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a class="link" href="#home">O nama</a></li>
+        <li><a class="link" href="#about">Kontakt</a></li>
+        <li>
+          <a class="link" href="SearchPage.html" onclick="LoginIfNot()"
+            >Pretraga</a
+          >
+        </li>
+        <li id="loginnav">
+          <a class="link" href="/HTML/Login.html">Uloguj se</a>
+        </li>
+        <li id="logoutnav">
+          <a class="link" onclick="LogOut()">Izloguj se</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="content">
+      <div id="Searchbox">
+        <div id="OsnovnaPodesavanja">
+          <span id="OPnaslov">Osnovna Podesavanja</span>
+          <div id="timemagbox">
+            <div id="magbox">
+              <span>Magnituda</span>
+              <div class="radiobox" id="radiomagbox">
+                <label>
+                  <input
+                    type="radio"
+                    name="magnituda"
+                    value="4.5"
+                    checked
+                    onclick="disableMag()"
+                  />
+                  4.5+
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="magnituda"
+                    value="2.5"
+                    onclick="disableMag()"
+                  />
+                  2.5+
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="magnituda"
+                    value="Drugo"
+                    onclick="enableMag()"
+                  />
+                  Vas Unos
+                </label>
+              </div>
+              <div class="custombox">
+                <label for="maxmagnitude">Maksimalna</label>
+                <input type="text" id="maxmagnitude" disabled />
+                <label for="minmagnitude">Minimalna</label>
+                <input type="text" id="minmagnitude" disabled />
+              </div>
+            </div>
+            <div id="timebox">
+              <span>Vreme</span>
+              <div class="radiobox" id="radiotimebox">
+                <label>
+                  <input
+                    type="radio"
+                    name="vreme"
+                    value="7"
+                    checked
+                    onclick="disableTime()"
+                  />
+                  Poslednjih 7 dana
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="vreme"
+                    value="30"
+                    onclick="disableTime()"
+                  />
+                  Poslednjih 30 dana
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="vreme"
+                    value="Drugo"
+                    onclick="enableTime()"
+                  />
+                  Vas Unos
+                </label>
+              </div>
+              <div class="custombox">
+                <label for="starttime">Pocetno</label>
+                <input value="2014-01-01" type="date" id="starttime" disabled />
+                <label for="endtime">Krajnje</label>
+                <input value="2014-01-02" id="endtime" type="date" disabled />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="NaprednaPodesavanja">
+          <span id="NPnaslov">Napredna Podesavanja</span>
+          <div id="NapGore">
+            <div id="GeoReg">
+              <span class="NazivKategorije">Geografski region</span>
+              <span id="disclaimer"
+                >Koordinate u decimalnom zapisu. Sever mora da bude veci od
+                juga, Istok mora da bude veci od zapada.</span
+              >
+              <div id="koordinate">
+                <div id="Sever">
+                  <label for="minlatitude">Sever</label>
+                  <input
+                    max="90"
+                    min="=90"
+                    type="number"
+                    id="minlatitude"
+                    class="koordinata"
+                  />
+                </div>
+                <div id="IstokZapad">
+                  <div id="Zapad">
+                    <label for="maxlongitude">Zapad</label>
+                    <input
+                      type="number"
+                      max="180"
+                      min="-180"
+                      id="minlongitude"
+                      class="koordinata"
+                    />
+                  </div>
+                  <div id="Istok">
+                    <label for="minlongitude">Istok</label>
+                    <input
+                      type="number"
+                      max="180"
+                      min="-180"
+                      id="maxlongitude"
+                      class="koordinata"
+                    />
+                  </div>
+                </div>
+                <div id="Jug">
+                  <label for="maxlatitude">Jug</label>
+                  <input
+                    max="90"
+                    min="=90"
+                    type="number"
+                    id="maxlatitude"
+                    class="koordinata"
+                  />
+                </div>
+              </div>
+            </div>
+            <div id="Dubina">
+              <span class="NazivKategorije">Dubina</span>
+              <label for="maxdepth">Maksimalna</label>
+              <input type="text" id="maxdepth" />
+              <label for="mindepth">Minimalna</label>
+              <input type="text" id="mindepth" />
+            </div>
+          </div>
+          <div id="NapDole">
+            <div id="Krug">
+              <span class="NazivKategorije">Krug</span>
+              <label for="latitude">Geografska Sirina Centra</label>
+              <input type="text" id="latitude" />
+              <label for="longitude">Geografska Duzina Centra</label>
+              <input type="text" id="longitude" />
+              <label for="maxradiuskm">Precnik u km</label>
+              <input type="text" id="maxradiuskm" />
+            </div>
+            <div id="BrOrder">
+              <span class="NazivKategorije">Formatiranje rezultata</span>
+              <label for="limit">Maksimalan broj rezultata</label>
+              <input id="limit" type="number" />
+              <label for="orderby">Sortiraj po</label>
+              <select id="orderby">
+                <option value="time">Vremenu - Prvo Najnoviji</option>
+                <option value="time-asc">Vremenu - Prvo Najstariji</option>
+                <option value="magnitude">Magnitudi - Prvo Najveca</option>
+                <option value="magnitude-asc">Magnitudi - Prvo Najmanja</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="buttonbox">
+          <button id="Search" onclick="Stisnutodugme()">Pretrazi</button>
+        </div>
+      </div>
+    </div>
+    <script src="/Javascript/searchpagescript.js"></script>
+  </body>
+  <script>
+    const hamburger = document.querySelector(".hamburger-icon");
+    const navList = document.querySelector(".nav-list");
+
+    hamburger.addEventListener("click", () => {
+      navList.classList.toggle("show");
+      hamburger.classList.toggle("active");
+    });
+  </script>
+  <script src="/Javascript/checklogin.js"></script>
+</html>

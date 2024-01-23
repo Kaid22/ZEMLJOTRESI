@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #d2f898;
+}
+#HomeLogo {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+}
+#content {
+  padding-top: 3rem;
+  overflow: hidden;
+}
+.navbar {
+  z-index: 9999;
+  height: 3rem;
+  background-color: #60992d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  box-shadow: 0px 5px 10px -6px rgba(0, 0, 0, 0.7);
+  position: fixed;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.logo img {
+  max-height: 30px; /* Adjust as needed */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  margin-left: 15px;
+}
+
+.nav-list li:first-child {
+  margin-left: 0;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .nav-list {
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    background-color: #8cae68;
+    position: fixed;
+    top: 3rem;
+    transition: all 0.5s ease;
+    left: 0;
+  }
+  .nav-list li {
+    font-size: 3rem;
+    display: inline-block;
+    height: 5rem;
+    width: 100%;
+    margin-left: 0px;
+    border-bottom: 3px solid #9eb3c2;
+    padding-top: 1%;
+  }
+  .nav-list li a {
+    display: block;
+  }
+  .nav-list.show {
+    display: flex;
+    opacity: 100%; /* Show the nav list when the class "show" is applied */
+  }
+
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Adjustments for the middle line when active */
+  .line:nth-child(2) {
+    margin: 0;
+  }
+
+  /* Active state for the hamburger menu */
+  .hamburger-icon.active .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger-icon.active .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-icon.active .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+#loginnav.inactive {
+  display: none;
+}
+#logoutnav.inactive {
+  display: none;
+}

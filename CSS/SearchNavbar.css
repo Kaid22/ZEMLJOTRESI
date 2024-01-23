@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #d2f898;
+}
+#HomeLogo {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+}
+.navbar {
+  z-index: 1000;
+  height: 3rem;
+  background-color: #60992d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  box-shadow: 0px 5px 10px -6px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+.logo img {
+  max-height: 30px; /* Adjust as needed */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-list li {
+  margin-left: 15px;
+}
+
+.nav-list li:first-child {
+  margin-left: 0;
+}
+.nav-list button {
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+#globe {
+  background-image: url("/images/Globe-white.png");
+  background-size: cover;
+}
+#globe.active {
+  background-image: url("/images/Globe-blue.png");
+  background-size: cover;
+}
+#list {
+  background-image: url("/images/List-white.png");
+  background-size: cover;
+}
+#list.active {
+  background-image: url("/images/List-blue.png");
+  background-size: cover;
+}

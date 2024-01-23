@@ -1,0 +1,14 @@
+[
+  {
+    "username": "user1",
+    "hashedPassword": "50794a91d858997dd137b114c6f1ab233d0907e1f869e3cc08bf5eebbe78751c"
+  },
+  {
+    "username": "user2",
+    "hashedPassword": "50794a91d858997dd137b114c6f1ab233d0907e1f869e3cc08bf5eebbe78751c"
+  },
+  {
+    "username": "user3",
+    "hashedPassword": "50794a91d858997dd137b114c6f1ab233d0907e1f869e3cc08bf5eebbe78751c"
+  }
+]

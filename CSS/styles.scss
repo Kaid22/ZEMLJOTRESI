@@ -1,0 +1,270 @@
+$primary-color: #e6f9af;
+$secondary-color: #60992d;
+$accent-color: #e74c3c;
+$magwidth: 3rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar styles */
+
+/* Hamburger menu styles */
+
+/* Media query for mobile view */
+
+#HomeLogo {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+}
+body {
+  background: #d2f898;
+}
+/* DON'T TOUCH ABOVE THIS LINE*/
+/* styles.css */
+#mapid {
+  height: 100%;
+  width: 100%;
+}
+.EQcontainer {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #34403a;
+  background-color: #e6f9af;
+  border-bottom: 2px solid #9eb3c2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0.2rem;
+  height: 3.5rem;
+}
+.EQinfoCon {
+  width: calc(100% - #{$magwidth});
+  padding: 0.5rem;
+}
+#EQlist {
+  background-color: #e6f9af;
+  width: 100%;
+  overflow: scroll;
+  height: 90%;
+}
+.magcontainer {
+  width: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.EQname {
+  font-weight: normal;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide the overflowing text */
+  text-overflow: ellipsis;
+}
+.EQtime {
+  font-weight: normal;
+}
+.EQdepth {
+  font-weight: normal;
+}
+.EQinfoCon2 {
+  display: flex;
+  justify-content: space-between;
+}
+#SuperDuperContainer {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 3rem);
+}
+#MapContainer {
+  flex: 1;
+}
+#MapContainer.both {
+  visibility: visible;
+}
+#floating-window {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: #8cae68;
+  box-shadow: 0.5rem 0.5rem 10px 5px rgb(0, 0, 0, 0.7);
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 20rem;
+  border-radius: 8px;
+  z-index: 10000;
+  display: none;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+#FWPodaci {
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+}
+#FWNaziv {
+  height: 40%;
+  margin-bottom: 2%;
+  font-size: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#FWpodaciLabel {
+  display: flex;
+  flex-direction: column;
+  color: darkblue;
+}
+#FWpodaciLabel p {
+  display: flex;
+  width: 20%;
+}
+#FWPodaciPodaci {
+  padding-left: 5%;
+}
+#FWDugmeConatiner {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 15%;
+}
+#FWZatvori {
+  width: 5rem;
+  height: 2rem;
+  align-self: center;
+  margin-top: 2%;
+  background-color: rgb(98, 98, 253);
+  border: none;
+}
+#FWZatvori:hover {
+  cursor: pointer;
+}
+
+#labels label {
+  font-family: Arial, sans-serif; /* Specify your desired font-family */
+  font-size: 14px; /* Adjust font size as needed */
+  /* Other label styles */
+}
+#Parameters {
+  display: flex;
+  flex-direction: row;
+}
+#labels {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+}
+#inputs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+}
+#Search {
+  height: 10%;
+}
+#Searchbox {
+  display: flex;
+}
+#buttonbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#levo.both {
+  width: 20rem;
+  flex-direction: column;
+  display: flex;
+  border-right: 2px solid #9eb3c2;
+}
+#sortiranje {
+  position: relative;
+  z-index: 100;
+  padding: 0.5rem;
+  height: 7rem;
+  background-color: #e6f9af;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom: 2px solid #9eb3c2;
+  box-shadow: -2px 5px 5px 2px rgb(0, 0, 0, 0.3);
+}
+/* DROPDOWN STYLING */
+.dropbtn {
+  background-color: $primary-color;
+  color: black;
+  padding: 8px;
+  padding-bottom: 0;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid #9eb3c2;
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #9abe74;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background-color: #f1f1f1;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+#BroDogContainer {
+  display: flex;
+}
+#BrojZemljotresa {
+  padding-left: 5px;
+}
+#DropDugmad {
+  display: flex;
+  align-items: top;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#sortirajpo {
+  align-self: flex-start;
+}
+#levo.active {
+  width: 100%;
+}
+#levo.inactive {
+  display: none;
+}
+#MapContainer.active {
+  visibility: visible;
+}
+#MapContainer.inactive {
+  visibility: hidden;
+}

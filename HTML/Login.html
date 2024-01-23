@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive Map with OpenStreetMap</title>
+    <link rel="stylesheet" href="/CSS/styles.css" />
+    <link rel="stylesheet" href="/CSS/Navbar.css" />
+    <link rel="stylesheet" href="/CSS/Login.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link to your CSS -->
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="/images/logo.png" alt="Logo" />
+        <a id="HomeLogo" href="Landing.html">EQLog</a>
+      </div>
+      <div class="hamburger-icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a class="link" href="#home">O nama</a></li>
+        <li><a class="link" href="#about">Kontakt</a></li>
+        <li>
+          <a class="link" onclick="LoginIfNot()">Pretraga</a>
+        </li>
+        <li id="loginnav">
+          <a class="link" href="/HTML/Login.html">Uloguj se</a>
+        </li>
+        <li id="logoutnav">
+          <a class="link" onclick="LogOut()">Izloguj se</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="content">
+      <div id="logincontainer">
+        <input type="text" placeholder="Korisnicko ime" id="username" />
+        <div id="passcontainer">
+          <input type="password" placeholder="Lozinka" id="password" />
+          <button onclick="togglePasswordVisibility(this)"></button>
+        </div>
+        <button id="login" onclick="TryLogin()">Uloguj se</button>
+        <span id="register"
+          >Nemate nalog?
+          <a href="/HTML/Registration.html">Registruj se ovde</a></span
+        >
+      </div>
+    </div>
+    <script>
+      const hamburger = document.querySelector(".hamburger-icon");
+      const navList = document.querySelector(".nav-list");
+
+      hamburger.addEventListener("click", () => {
+        navList.classList.toggle("show");
+        hamburger.classList.toggle("active");
+      });
+    </script>
+    <script src="/Javascript/checklogin.js"></script>
+    <script src="/Javascript/Login.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+  </body>
+</html>
