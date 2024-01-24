@@ -152,3 +152,8 @@ td {
     display: flex;
   }
 }
+@media screen and (max-width: 425px) {
+  #SuperDuperContainer {
+    padding: 10px;
+  }
+}
