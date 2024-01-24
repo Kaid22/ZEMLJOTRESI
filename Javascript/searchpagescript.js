@@ -15,7 +15,6 @@ var defaultValues = {
   minmagnitude: "",
   orderby: "",
 };
-loggedchecker();
 document.addEventListener("DOMContentLoaded", function () {
   loggedchecker();
   document.getElementById("starttime").max = new Date()

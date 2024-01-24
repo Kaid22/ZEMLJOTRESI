@@ -25,7 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
       PostaviPodatke(place, magnitude, latituda, longituda, depth, time);
       const coordinates = data.features[0].geometry.coordinates;
       const marker = L.marker([coordinates[1], coordinates[0]]).addTo(map);
+      map.setMaxZoom(18);
+      map.setMinZoom(2);
       map.setView([coordinates[1], coordinates[0]], 6);
+      setMapBounds(map);
     })
     .catch((error) => console.error("Error fetching earthquake data:", error));
 });
@@ -83,4 +86,12 @@ function IdinaPretragu() {
   if (loggedin == "true")
     window.location.href = "../HTML/" + lang + "SearchPage.html";
   else window.location.href = "../HTML/" + lang + "Login.html";
+}
+function setMapBounds(map) {
+  map.invalidateSize();
+  var maxBounds = L.latLngBounds(L.latLng(-90, -180), L.latLng(90, 180));
+  map.setMaxBounds(maxBounds);
+  map.on("drag", function () {
+    map.panInsideBounds(maxBounds, { animate: false });
+  });
 }

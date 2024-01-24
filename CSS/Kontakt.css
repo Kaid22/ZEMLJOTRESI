@@ -5,7 +5,7 @@
 }
 input,
 #porukainput {
-  font-size: 2rem;
+  font-size: 1.7rem;
   padding: 10px;
   width: 100%;
   background-color: whitesmoke;
@@ -24,7 +24,7 @@ input {
   justify-content: center;
 }
 #Kontaktforma {
-  height: 70%;
+  height: auto;
   justify-content: space-between;
   color: whitesmoke;
   background-color: #86c12d;
@@ -64,16 +64,6 @@ input:focus,
 #porukainput:focus {
   outline: none;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-}
-#imeporukica,
-#prezimeporukica,
-#emailporukica {
-  display: none;
-}
-#ime input:focus + #imeporukica,
-#prezime input:focus + #prezimeporukica,
-#email input:focus + #emailporukica {
-  display: flex;
 }
 .nazivi {
   font-weight: 600;
@@ -120,7 +110,7 @@ input:focus,
 }
 #desno {
   justify-content: space-around;
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 @media screen and (max-width: 1600px) {
   #levo,
