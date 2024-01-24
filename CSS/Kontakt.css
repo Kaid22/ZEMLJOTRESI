@@ -3,8 +3,161 @@
   background-color: #e6ffbf;
   width: 80%;
 }
+input,
+#porukainput {
+  font-size: 2rem;
+  padding: 10px;
+  width: 100%;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+}
+input {
+  height: 4rem;
+}
 #content {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#Kontaktforma {
+  height: 70%;
+  justify-content: space-between;
+  color: whitesmoke;
+  background-color: #86c12d;
+  border-radius: 10px;
+  padding: 1rem;
+  padding-right: 2rem;
+
+  display: flex;
+  width: 80%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+#desno {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+#emailinput,
+#porukainput {
+  width: 100%;
+}
+#porukainput {
+  resize: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 20rem;
+  line-height: normal;
+}
+#ime,
+#prezime {
+  width: 47%;
+}
+#imeprezime {
+  display: flex;
+  justify-content: space-between;
+}
+input:focus,
+#porukainput:focus {
+  outline: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+#imeporukica,
+#prezimeporukica,
+#emailporukica {
+  display: none;
+}
+#ime input:focus + #imeporukica,
+#prezime input:focus + #prezimeporukica,
+#email input:focus + #emailporukica {
+  display: flex;
+}
+.nazivi {
+  font-weight: 600;
+}
+#levo {
+  padding: 1rem;
+  width: 29%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+#levo p,
+#levo h2 {
+  text-align: center;
+}
+#levogore {
+  height: 50%;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-around;
+}
+#content button {
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  background-color: #256d1b;
+  color: whitesmoke;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  margin-bottom: 3.3rem;
+}
+#content button:hover {
+  transform: translateY(2px);
+}
+.netacnopolje {
+  font-weight: 700;
+  color: red;
+  visibility: hidden;
+}
+#desno {
+  justify-content: space-around;
+  font-size: 2rem;
+}
+@media screen and (max-width: 1600px) {
+  #levo,
+  #desno,
+  #porukainput,
+  input {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  #Kontaktforma {
+    flex-direction: column;
+    height: auto;
+    padding-right: 1rem;
+    width: 100%;
+  }
+  #content {
+    height: auto;
+  }
+  #levo,
+  #desno {
+    width: 100%;
+  }
+  #levo {
+    justify-content: space-around;
+  }
+  #levogore,
+  #levodole {
+    margin: 1rem 0;
+  }
+  #levo,
+  #desno,
+  #porukainput,
+  input {
+    font-size: 1rem;
+  }
+  #content button {
+    font-size: 2rem;
+  }
 }

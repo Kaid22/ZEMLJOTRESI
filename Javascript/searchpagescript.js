@@ -15,6 +15,7 @@ var defaultValues = {
   minmagnitude: "",
   orderby: "",
 };
+loggedchecker();
 document.addEventListener("DOMContentLoaded", function () {
   loggedchecker();
   document.getElementById("starttime").max = new Date()
@@ -68,7 +69,9 @@ function constructURL() {
   var url = baseUrl + (params.length > 0 ? "&" + params.join("&") : "");
 
   localStorage.setItem("FetchUrl", url);
-  window.location.href = "index.html";
+  const currentURL = window.location.href;
+  const lang = currentURL.split("/").pop().slice(0, 3);
+  window.location.href = "../HTML/" + lang + "index.html";
 }
 function updateParameter(paramName, paramValue) {
   var storedValues =
@@ -196,6 +199,9 @@ function ProveriFormat() {
   updateParameter("orderby", selektovano);
 }
 function loggedchecker() {
-  if (localStorage.getItem("loggedin") != "true")
-    window.location.href = "../HTML/Login.html";
+  const currentURL = window.location.href;
+  const lang = currentURL.split("/").pop().slice(0, 3);
+  loggedin = localStorage.getItem("loggedin");
+  if (loggedin != "true")
+    window.location.href = "../HTML/" + lang + "Login.html";
 }

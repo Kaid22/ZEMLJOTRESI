@@ -21,7 +21,10 @@ function CheckAndAdd() {
     userDatabase.push(newUser);
     localStorage.setItem("userDatabase", JSON.stringify(userDatabase));
     localStorage.setItem("loggedin", true);
-    window.location.href = "/HTML/Landing.html";
+    const currentURL = window.location.href;
+    const lang = currentURL.split("/").pop().slice(0, 3);
+    window.location.href = "../HTML/" + lang + "Landing.html";
+    localStorage.setItem("loggedin", true);
   }
 }
 function fetchUserDatabase() {

@@ -12,7 +12,7 @@
     <nav class="navbar">
       <div class="logo">
         <img src="../images/logo.png" alt="Logo" />
-        <a id="HomeLogo" href=".Landing.html">EQLog</a>
+        <a id="HomeLogo" href="./sr-Landing.html">EQLog</a>
       </div>
       <div class="hamburger-icon">
         <div class="line"></div>
@@ -20,16 +20,38 @@
         <div class="line"></div>
       </div>
       <ul class="nav-list">
-        <li><a class="link" href="#home">O nama</a></li>
-        <li><a class="link" href="#about">Kontakt</a></li>
         <li>
-          <a class="link" onclick="LoginIfNot()">Pretraga</a>
+          <a class="link" href="./sr-Onama.html">
+            <img class="navslika" src="../images/info-512.png" />O nama</a
+          >
+        </li>
+        <li>
+          <a class="link" href="./sr-Kontakt.html"
+            ><img class="navslika" src="../images/icon.png" />Kontakt</a
+          >
+        </li>
+        <li>
+          <a class="link" href="./sr-SearchPage.html"
+            ><img
+              class="navslika"
+              src="../images/magnifying-glass-3-512.png"
+            />Pretraga</a
+          >
         </li>
         <li id="loginnav">
-          <a class="link" href="./Login.html">Uloguj se</a>
+          <a class="link" href="./sr-Login.html"
+            ><img class="navslika" src="../images/user-512.png" />Uloguj se</a
+          >
         </li>
         <li id="logoutnav">
-          <a class="link" onclick="LogOut()">Izloguj se</a>
+          <a class="link" onclick="LogOut()"
+            ><img class="navslika" src="../images/logout-512.png" />Izloguj
+            se</a
+          >
+        </li>
+        <li id="langswitcher">
+          <button id="SR" class="active" onclick="PredjiNaSrpski()">SR</button>
+          <button id="ENG" onclick="PredjiNaEngleski()">EN</button>
         </li>
       </ul>
     </nav>
@@ -40,7 +62,7 @@
         <input type="password" placeholder="Potvrdi Lozinku" id="password2" />
         <button id="login" onclick="CheckAndAdd() ">Registruj se</button>
         <span id="register"
-          >Vec imas nalog? <a href=".Login.html">Uloguj se</a></span
+          >Vec imas nalog? <a href=".sr-Login.html">Uloguj se</a></span
         >
       </div>
     </div>

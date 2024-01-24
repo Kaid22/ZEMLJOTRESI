@@ -8,12 +8,12 @@ hamburger.addEventListener("click", () => {
 function PredjiNaEngleski() {
   const currentURL = window.location.href;
   const pageName = currentURL.split("/").pop();
-  const newURL = currentURL.replace(pageName, "en-" + pageName);
+  const newURL = currentURL.replace(pageName, "en-" + pageName.slice(3));
   window.location.href = newURL;
 }
 function PredjiNaSrpski() {
   const currentURL = window.location.href;
   const pageName = currentURL.split("/").pop();
-  const newURL = currentURL.replace(pageName, "sr-" + pageName);
+  const newURL = currentURL.replace(pageName, "sr-" + pageName.slice(3));
   window.location.href = newURL;
 }

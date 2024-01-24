@@ -20,7 +20,10 @@ function ProveriLogin() {
   }
 }
 function LoginIfNot() {
-  if (localStorage.getItem("loggedin") != "true")
-    window.location.href = "../HTML/Login.html";
-  else window.location.href = "../HTML/SearchPage.html";
+  const currentURL = window.location.href;
+  const lang = currentURL.split("/").pop().slice(0, 3);
+  loggedin = localStorage.getItem("loggedin");
+  if (loggedin == "true")
+    window.location.href = "../HTML/" + lang + "SearchPage.html";
+  else window.location.href = "../HTML/" + lang + "Login.html";
 }

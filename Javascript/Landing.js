@@ -77,7 +77,10 @@ function NapraviLokaciju(lat, lng) {
   return str;
 }
 function IdinaPretragu() {
+  const currentURL = window.location.href;
+  const lang = currentURL.split("/").pop().slice(0, 3);
   loggedin = localStorage.getItem("loggedin");
-  if (loggedin == "true") window.location.href = "../HTML/SearchPage.html";
-  else window.location.href = "../HTML/Login.html";
+  if (loggedin == "true")
+    window.location.href = "../HTML/" + lang + "SearchPage.html";
+  else window.location.href = "../HTML/" + lang + "Login.html";
 }
