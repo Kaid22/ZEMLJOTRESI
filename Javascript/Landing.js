@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const latituda = data.features[0].geometry.coordinates[0];
       const longituda = data.features[0].geometry.coordinates[1];
       const depth = data.features[0].geometry.coordinates[2];
-      const time = new Date(data.features[0].properties.time).toLocaleString();
+      const time = data.features[0].properties.time;
       PostaviPodatke(place, magnitude, latituda, longituda, depth, time);
       const coordinates = data.features[0].geometry.coordinates;
       const marker = L.marker([coordinates[1], coordinates[0]]).addTo(map);
@@ -46,6 +46,7 @@ function PostaviPodatke(place, magnitude, latituda, longituda, depth, time) {
   fwdubina.innerHTML = depth + "km";
 }
 function getDate(timestamp) {
+  console.log(timestamp);
   let date = new Date(timestamp);
 
   // Extracting different parts of the date
