@@ -112,11 +112,11 @@ td {
 #dugme button:hover {
   transform: translateY(2px);
 }
-#FWplace {
+.podatak {
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 16rem;
-  max-height: 1.5rem;
+  padding-left: 10px;
 }
 @media screen and (max-width: 1200px) {
   #FWPodaci span {
