@@ -7,7 +7,7 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     />
-    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/Landing.css" />
     <link rel="stylesheet" href="../CSS/Navbar.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Link to your CSS -->
@@ -24,31 +24,205 @@
         <div class="line"></div>
       </div>
       <ul class="nav-list">
-        <li><a class="link" href="#home">O nama</a></li>
-        <li><a class="link" href="#about">Kontakt</a></li>
         <li>
-          <a class="link" onclick="LoginIfNot()">Pretraga</a>
+          <a class="link" href="./Onama.html">
+            <img class="navslika" src="../images/info-512.png" />O nama</a
+          >
+        </li>
+        <li>
+          <a class="link" href="./Kontakt.html"
+            ><img class="navslika" src="../images/icon.png" />Kontakt</a
+          >
+        </li>
+        <li>
+          <a class="link" onclick="LoginIfNot()"
+            ><img
+              class="navslika"
+              src="../images/magnifying-glass-3-512.png"
+            />Pretraga</a
+          >
         </li>
         <li id="loginnav">
-          <a class="link" href="./Login.html">Uloguj se</a>
+          <a class="link" href="./Login.html"
+            ><img class="navslika" src="../images/user-512.png" />Uloguj se</a
+          >
         </li>
         <li id="logoutnav">
-          <a class="link" onclick="LogOut()">Izloguj se</a>
+          <a class="link" onclick="LogOut()"
+            ><img class="navslika" src="../images/logout-512.png" />Izloguj
+            se</a
+          >
+        </li>
+        <li id="langswitcher">
+          <button id="SR" class="active" onclick="PredjiNaSrpski()">SR</button>
+          <button id="ENG" onclick="PredjiNaEngleski()">EN</button>
         </li>
       </ul>
     </nav>
     <div id="content">
-      <div id="SuperDuperContainer"></div>
-    </div>
-    <script>
-      const hamburger = document.querySelector(".hamburger-icon");
-      const navList = document.querySelector(".nav-list");
+      <div id="SuperDuperContainer">
+        <div id="NajnovijiZemljotres">
+          <h2>Najnovi Zemljotres</h2>
+          <div id="mapaIPodaci">
+            <div id="map"></div>
+            <div id="PodaciIDugme">
+              <div id="FWPodaci">
+                <span>
+                  <p id="FWplacelabel">Mesto</p>
+                  <p id="FWplace"></p>
+                </span>
+                <span>
+                  <p id="FWmagnitudalabel">Magnituda</p>
+                  <p id="FWmagnituda"></p>
+                </span>
+                <span>
+                  <p id="FWvremelabel">Vreme</p>
+                  <p id="FWvreme"></p>
+                </span>
+                <span>
+                  <p id="FWlokacijalabel">Lokacija</p>
+                  <p id="FWlokacija"></p>
+                </span>
+                <span>
+                  <p id="FWdubinalabel">Dubina</p>
+                  <p id="FWdubina"></p>
+                </span>
+              </div>
+              <div id="dugme">
+                <button onclick="IdinaPretragu()">Pretrazi Katalog</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2>Merkalijeva skala potresa</h2>
+        <div id="Omagnitudi">
+          <div id="OMnesto">
+            <p>
+              Merkalijeva skala, poznata i kao Merkalijeva-Milijeva skala,
+              predstavlja jedan od starijih načina merenja jačine zemljotresa.
+              Razvijena tokom 19. veka, ova skala je prvobitno bila zasnovana na
+              opažanjima i subjektivnim iskustvima ljudi nakon zemljotresa.
+              Kasnije je modifikovana i proširena od strane američkog inženjera
+              i seizmologa Čarlsa F. Milija.
+            </p>
 
-      hamburger.addEventListener("click", () => {
-        navList.classList.toggle("show");
-        hamburger.classList.toggle("active");
-      });
-    </script>
+            <p>
+              Skala se sastoji od deset stepeni, numerisanih od 1 do 10, pri
+              čemu svaki stepen opisuje različite nivoe intenziteta zemljotresa.
+              Ova skala je posebno fokusirana na opisivanje uticaja potresa na
+              ljudsku okolinu i objekte, umesto da meri fizičke karakteristike
+              same podrhtavanja tla.
+            </p>
+
+            <p>
+              Na početnim stepenima, kao što je "Micro" (1) ili "Minor" (2),
+              zemljotresi su obično neprimetni ili ih oseća mali broj ljudi bez
+              izazivanja štete. Sa porastom stepena, poput "Moderate" (5) ili
+              "Strong" (6), intenzitet zemljotresa raste, uz mogućnost ozbiljnih
+              oštećenja na objektima i okolini. Najviši stepen, "Extreme" (10),
+              označava potpuno uništenje, ozbiljna oštećenja ili urušavanje svih
+              zgrada na pogođenom području.
+            </p>
+
+            <p>
+              Važno je napomenuti da, iako je Merkalijeva skala bila značajna u
+              prošlosti, moderni pristupi seizmičkoj proceni često koriste druge
+              metode poput Magnitude potresa i Intenziteta potresa. Magnituda
+              meri energiju oslobođenu tokom potresa, dok Intenzitet procenjuje
+              efekte potresa na određenoj lokaciji.
+            </p>
+
+            <p>
+              U zaključku, Merkalijeva skala ostaje deo istorije seizmologije i
+              doprinela je razumevanju intenziteta zemljotresa, mada se danas
+              često kombinuje sa modernijim metodama za precizniju analizu
+              potresa.
+            </p>
+          </div>
+          <div id="OMnesto2">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mag.</th>
+                  <th>Intenzitet</th>
+                  <th>Opis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Micro</td>
+                  <td>Mikro potresi, ne osećaju se.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Minor</td>
+                  <td>Osećaju neki ljudi, bez oštećenja.</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Slab</td>
+                  <td>Oseća ga mnogo ljudi, bez oštećenja zgrada.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Lagan</td>
+                  <td>Primetno podrhtavanje, manja strukturalna oštećenja.</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Umeren</td>
+                  <td>
+                    Može prouzrokovati ozbiljna oštećenja loše izgrađenim
+                    objektima.
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Jak</td>
+                  <td>
+                    Može biti destruktivan u područjima do oko 100 milja u
+                    naseljenim područjima.
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Veliki</td>
+                  <td>
+                    Može prouzrokovati ozbiljna oštećenja na širem području.
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Veliki</td>
+                  <td>
+                    Može prouzrokovati ozbiljna oštećenja na širem području.
+                  </td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Masivan</td>
+                  <td>
+                    Razoran na područjima nekoliko hiljada milja u prečniku.
+                  </td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Ekstreman</td>
+                  <td>
+                    Totalno uništenje, ozbiljna oštećenja ili urušavanje svih
+                    zgrada.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../Javascript/hamburger.js"></script>
     <script src="../Javascript/checklogin.js"></script>
+    <script src="../Javascript/Landing.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   </body>
 </html>

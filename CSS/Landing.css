@@ -1,0 +1,154 @@
+p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#SuperDuperContainer {
+  padding: 2rem;
+  background-color: #e6ffbf;
+  width: 80%;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #010101;
+}
+
+th {
+  background-color: #598b2c;
+}
+#OMnesto {
+  width: 50%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+#OMnesto p {
+  margin-bottom: 1rem;
+}
+h2 {
+  margin: 1rem 0;
+  margin-left: 1rem;
+}
+#EQDiagram {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+#OMnesto2 {
+  width: 50%;
+}
+td {
+  background-color: #97bc77;
+}
+#Omagnitudi {
+  display: flex;
+}
+#OMnesto,
+#OMnesto2 {
+  padding: 1rem;
+}
+#map {
+  background: #3553ff;
+  width: 50%;
+  height: 30rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+#mapaIPodaci {
+  display: flex;
+  padding: 1rem;
+}
+#FWPodaci {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#FWPodaci span {
+  border-bottom: 5px solid #598b2c;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+#FWPodaci p {
+  font-size: 1.2rem;
+}
+#PodaciIDugme {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 0 0.5rem;
+  margin-left: 1rem;
+}
+#dugme {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+#dugme button {
+  border: none;
+  background-color: #598b2c;
+  font-size: 2em;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+#dugme button:hover {
+  transform: translateY(2px);
+}
+#FWplace {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 16rem;
+  max-height: 1.5rem;
+}
+@media screen and (max-width: 1200px) {
+  #FWPodaci span {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  #Omagnitudi {
+    flex-direction: column;
+  }
+  #OMnesto2,
+  #OMnesto {
+    width: 100%;
+  }
+  #SuperDuperContainer {
+    width: 100%;
+  }
+  #mapaIPodaci {
+    flex-direction: column;
+  }
+  #PodaciIDugme,
+  #map {
+    width: 100%;
+  }
+  #dugme button {
+    margin-left: 0;
+  }
+  #PodaciIDugme {
+    margin-left: 0;
+    padding: 0;
+  }
+  #FWPodaci span {
+    display: flex;
+  }
+}

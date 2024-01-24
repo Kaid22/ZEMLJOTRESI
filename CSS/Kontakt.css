@@ -1,0 +1,10 @@
+#SuperDuperContainer {
+  padding: 2rem;
+  background-color: #e6ffbf;
+  width: 80%;
+}
+#content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

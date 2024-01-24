@@ -16,6 +16,7 @@ var defaultValues = {
   orderby: "",
 };
 document.addEventListener("DOMContentLoaded", function () {
+  loggedchecker();
   document.getElementById("starttime").max = new Date()
     .toISOString()
     .split("T")[0];

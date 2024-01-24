@@ -26,7 +26,7 @@
           <a class="link" onclick="LoginIfNot()">Pretraga</a>
         </li>
         <li id="loginnav">
-          <a class="link" href=".Login.html">Uloguj se</a>
+          <a class="link" href="./Login.html">Uloguj se</a>
         </li>
         <li id="logoutnav">
           <a class="link" onclick="LogOut()">Izloguj se</a>
@@ -44,15 +44,7 @@
         >
       </div>
     </div>
-    <script>
-      const hamburger = document.querySelector(".hamburger-icon");
-      const navList = document.querySelector(".nav-list");
-
-      hamburger.addEventListener("click", () => {
-        navList.classList.toggle("show");
-        hamburger.classList.toggle("active");
-      });
-    </script>
+    <script src="../Javascript/hamburger.js"></script>
     <script src="../Javascript/checklogin.js"></script>
     <script src="../Javascript/Register.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
