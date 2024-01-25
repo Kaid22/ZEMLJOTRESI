@@ -223,7 +223,9 @@
 #sortirajpo {
   align-self: flex-start;
 }
-
+.toggle-button:hover {
+  transform: translateY(2px);
+}
 #levo.active {
   width: 100%;
 }
