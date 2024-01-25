@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive Map with OpenStreetMap</title>
+    <!-- Link directly to Leaflet CSS from CDN -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="../CSS/Navbar.css" />
+    <link rel="stylesheet" href="../CSS/Onama.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link to your CSS -->
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../images/logo.png" alt="Logo" />
+        <a id="HomeLogo" href="./sr-Landing.html">EQLog</a>
+      </div>
+      <div class="hamburger-icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a class="link" href="./sr-Onama.html">
+            <img class="navslika" src="../images/info-512.png" />O nama</a
+          >
+        </li>
+        <li>
+          <a class="link" href="./sr-Kontakt.html"
+            ><img class="navslika" src="../images/icon.png" />Kontakt</a
+          >
+        </li>
+        <li>
+          <a class="link" onclick="PretragaLogovan()"
+            ><img
+              class="navslika"
+              src="../images/magnifying-glass-3-512.png"
+            />Pretraga</a
+          >
+        </li>
+        <li id="loginnav">
+          <a class="link" href="./sr-Login.html"
+            ><img class="navslika" src="../images/user-512.png" />Uloguj se</a
+          >
+        </li>
+        <li id="logoutnav">
+          <a class="link" onclick="LogOut()"
+            ><img class="navslika" src="../images/logout-512.png" />Izloguj
+            se</a
+          >
+        </li>
+        <li id="langswitcher">
+          <button id="SR" class="active" onclick="PredjiNaSrpski()">SR</button>
+          <button id="ENG" onclick="PredjiNaEngleski()">EN</button>
+        </li>
+      </ul>
+    </nav>
+    <div id="content">
+      <div id="SuperDuperContainer">
+        <h2>Opis projekta</h2>
+        <p>
+          Ovaj web sajt pruža korisnicima brz i jednostavan uvid u aktuelni
+          katalog zemljotresa širom sveta koristeći USGS API. Funkcionalnost
+          sajta omogućava pregled najnovijih zemljotresa, prikazujući ključne
+          informacije kao što su lokacija, magnituda, i vreme događaja.
+          Korisnici mogu brzo identifikovati zemljotrese koji su se nedavno
+          desili, uz dodatne informacije koje pomažu u razumevanju njihovog
+          uticaja. Dinamičko ažuriranje podataka omogućava praćenje situacije u
+          realnom vremenu, a jednostavan i čist dizajn olakšava korisnicima
+          pregled i interpretaciju informacija. Ovaj sajt pruža korisnicima
+          sredstvo za informisanje o zemljotresima širom sveta, što može biti
+          korisno kako za pojedince tako i za istraživače ili one koji prate
+          geološke događaje.
+        </p>
+        <h2>Ko je napravio ovaj sajt</h2>
+        <p>
+          Ja sam Kaid Avdić, rođen 10.10.2003. godine i Student sam smera
+          softversko inženjerstvo na Državnom Univerzitetu u Novom Pazaru.
+        </p>
+        <h2>Zašto je ovaj sajt napravljen?</h2>
+        <p>
+          Ovaj sajt je napravljen kao projekat iz predmeta Veb dizajn, gde su
+          studentima podeljene teme i API koji treba da koriste u izradi istog.
+        </p>
+        <h2>Kako je ovaj sajt napravljen?</h2>
+        <p>
+          Sajt je napravljen pomoću HTML, CSS i Javascript tehnologija. Za
+          prikazivanje podataka na mapama korišćena je
+          <a href="https://leafletjs.com">leaflet.js</a> biblioteka, a za
+          prikupljane podataka
+          <a href="https://earthquake.usgs.gov/fdsnws/event/1/"
+            >USGS earthquake catalog API</a
+          >.
+        </p>
+        <h2>Kako radi Websajt?</h2>
+        <p>
+          Na početnoj stranici se mogu videti informacije o najnovijem potresu,
+          kao i Neke osnovne informacije o Merkalijevoj skali koja se koristi za
+          ocenjivanje jačine potresa, kako bi korisnik imao okvirnu sliku o
+          snazi svakog događaja. Klikom na dugme "Pretraga" prikazaće vam se
+          lista parametara koje možete postaviti kako biste imali preciznu
+          kontrolu nad rezultatima koji se prikazuju. Nakon što ste uneli
+          željene parametre, klikom na dugme "pretraži" bićete odvedeni na
+          stranicu sa rezultatima gde možete videti lokaciju svakog seizmičkog
+          događaja na mapi kao i podatke koji su o njemu dostupni.
+        </p>
+      </div>
+    </div>
+    <script src="../Javascript/hamburger.js"></script>
+    <script src="../Javascript/checklogin.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  </body>
+</html>
