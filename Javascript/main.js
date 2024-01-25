@@ -47,7 +47,7 @@ function setMapBounds(map) {
   });
 }
 function addTectonicPlates(map) {
-  fetch("/JSON/tectonicplatedata.json")
+  fetch("../JSON/tectonicplatedata.json")
     .then((response) => response.json())
     .then((data) => {
       var tectonicPlates = L.geoJSON(data, {
