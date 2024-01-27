@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   loggedchecker();
   const EQlist = document.getElementById("EQlist");
   map = L.map("mapid", {
+    zoomControl: false,
     center: [90, 90],
     zoom: 2,
   });
@@ -26,6 +27,7 @@ function initializeMap() {
   addTectonicPlates(map);
   addEarthquakeMarkers(map);
   map.setZoom(4);
+  ZoomControl(map);
   return map;
 }
 function addTileLayer(map) {
@@ -387,5 +389,9 @@ function loggedchecker() {
   if (loggedin != "true")
     window.location.href = "../HTML/" + lang + "Login.html";
 }
-try {
-} catch (error) {}
+function ZoomControl(map) {
+  var zoomControl = L.control.zoom({
+    position: "bottomleft",
+  });
+  zoomControl.addTo(map);
+}
