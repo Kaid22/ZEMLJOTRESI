@@ -3,7 +3,6 @@
   width: 100%;
   z-index: 500;
   overflow: none;
-  padding-top: 3rem;
 }
 
 .EQcontainer {
@@ -65,6 +64,7 @@
 
 #MapContainer {
   flex: 1;
+  height: calc(100vh - 3rem);
 }
 
 #MapContainer.both {
