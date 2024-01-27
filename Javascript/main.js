@@ -389,12 +389,3 @@ function loggedchecker() {
   if (loggedin != "true")
     window.location.href = "../HTML/" + lang + "Login.html";
 }
-function ZoomControl(map) {
-  var zoomControl = L.control.zoom({
-    position: "bottomleft",
-  });
-  zoomControl.addTo(map);
-}
-document.querySelector(
-  ".leaflet-control-zoom .leaflet-bar .leaflet-control"
-).style.marginTop = "-20px";
