@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
   loggedchecker();
   const EQlist = document.getElementById("EQlist");
   map = L.map("mapid", {
-    center: [90, 90], // Set initial map center coordinates
-    zoom: 2, // Set initial zoom level
+    center: [90, 90],
+    zoom: 2,
   });
   ToggleButtonsOnStart();
   initializeMap();
@@ -76,7 +76,7 @@ function addEarthquakeMarkers(map) {
         marker.on("click", function (e) {
           PretraziStaviFW(e.target);
           FocusViewCoords(e.target);
-          PrikaziFw(); // Pass the marker as an argument to the FocusViewCoords function
+          PrikaziFw();
         });
         let a = new Earthquake(
           element.properties.place,
@@ -95,15 +95,13 @@ function addEarthquakeMarkers(map) {
 function getDate(timestamp) {
   let date = new Date(timestamp);
 
-  // Extracting different parts of the date
   let year = date.getFullYear();
-  let month = date.getMonth() + 1; // Month starts from 0, so we add 1
+  let month = date.getMonth() + 1;
   let day = date.getDate();
   let hours = date.getHours();
   let minutes = date.getMinutes();
   let seconds = date.getSeconds();
 
-  // Formatting the date and time
   let formattedDateTime = `${year}-${month < 10 ? "0" + month : month}-${
     day < 10 ? "0" + day : day
   } ${hours < 10 ? "0" + hours : hours}:${
@@ -120,7 +118,6 @@ function createEarthquakeElements(
   longidongi,
   latimati
 ) {
-  // Create elements
   const EQcontainer = document.createElement("div");
   EQcontainer.classList.add("EQcontainer");
 
@@ -157,11 +154,10 @@ function createEarthquakeElements(
     FocusViewCoords(EQcontainer);
     PretraziStaviFW(EQcontainer);
     PrikaziFw();
-  }); // Attach elements in hierarchy
+  });
   EQcontainer.appendChild(magcontainer);
   EQcontainer.appendChild(EQinfoCon);
 
-  // Return the constructed hierarchy
   EQlist.appendChild(EQcontainer);
 }
 function FocusViewCoords(element) {
@@ -171,23 +167,20 @@ function FocusViewCoords(element) {
     zoomLevel = map.getZoom();
   }
   if (element instanceof L.Marker) {
-    // Leaflet marker case
     var markerPosition = element.getLatLng();
     ZoomTimeSecs += 0.0000001 * map.getCenter().distanceTo(markerPosition);
     map.flyTo(markerPosition, zoomLevel, {
-      duration: ZoomTimeSecs, // Specify the duration of the animation in seconds
+      duration: ZoomTimeSecs,
     });
   } else if (element instanceof HTMLElement) {
-    // Regular DOM element case (similar to previous implementation for EQcontainer)
     var clickedLat = parseFloat(element.getAttribute("data-lat"));
     var clickedLng = parseFloat(element.getAttribute("data-lng"));
     markerPosition = [clickedLat, clickedLng];
     ZoomTimeSecs += 0.0000001 * map.getCenter().distanceTo(markerPosition);
     map.flyTo(markerPosition, zoomLevel, {
-      duration: ZoomTimeSecs, // Specify the duration of the animation in seconds
+      duration: ZoomTimeSecs,
     });
   } else {
-    // Handle other cases or throw an error if needed
     console.error("Unsupported element type.");
   }
 }
@@ -254,41 +247,29 @@ function FillEQList() {
   brojzemljotresa.innerHTML = EQList.length;
 }
 function SortByMagnitude(direction) {
-  // Check if direction is 'asc' or 'desc'
   if (direction !== "asc" && direction !== "desc") {
     console.error('Invalid direction. Please use "asc" or "desc".');
     return;
   }
 
-  // Use the sort method to sort the EQList array based on magnitude
   EQList.sort((a, b) => {
-    // If direction is 'asc', sort in ascending order
-    // If direction is 'desc', sort in descending order
     return direction === "asc"
       ? a.magnitude - b.magnitude
       : b.magnitude - a.magnitude;
   });
 
-  // Now EQList is sorted by magnitude
-  // You can access the sorted list or update your UI as needed
   FillEQList();
 }
 function SortByTime(direction) {
-  // Check if direction is 'asc' or 'desc'
   if (direction !== "asc" && direction !== "desc") {
     console.error('Invalid direction. Please use "asc" or "desc".');
     return;
   }
 
-  // Use the sort method to sort the EQList array based on time
   EQList.sort((a, b) => {
-    // If direction is 'asc', sort in ascending order
-    // If direction is 'desc', sort in descending order
     return direction === "asc" ? a.time - b.time : b.time - a.time;
   });
 
-  // Now EQList is sorted by time
-  // You can access the sorted list or update your UI as needed
   FillEQList();
 }
 function PrikaziDD(element) {
@@ -312,31 +293,24 @@ window.onclick = function (event) {
     PrikaziDD(event.target);
 };
 function isMobileDevice() {
-  // Define a media query for mobile devices
   var mediaQuery = window.matchMedia("(max-width: 767px)");
 
-  // Return true if the media query matches
   return mediaQuery.matches;
 }
 function toggleButton(button) {
-  // Check if it's a mobile device
   if (isMobileDevice()) {
-    // If in mobile view, deactivate all other buttons
     document.querySelectorAll(".toggle-button").forEach(function (otherButton) {
       if (otherButton !== button) {
         otherButton.classList.remove("active");
       }
     });
 
-    // Always ensure that at least one button is toggled in mobile mode
     if (!button.classList.contains("active")) {
       button.classList.add("active");
     }
   } else {
-    // If not in mobile view, at least one button must always be toggled
     var activeButtons = document.querySelectorAll(".toggle-button.active");
 
-    // If only one button is active, allow toggling
     if (activeButtons.length > 1 || !button.classList.contains("active")) {
       button.classList.toggle("active");
     }
@@ -350,15 +324,12 @@ document.querySelectorAll(".toggle-button").forEach(function (button) {
   });
 });
 window.addEventListener("resize", function () {
-  // If not in mobile view, at least one button must always be toggled
   if (!isMobileDevice()) {
     var activeButtons = document.querySelectorAll(".toggle-button.active");
 
     if (activeButtons.length === 0) {
-      // If no button is toggled, toggle the first button
       document.querySelector(".toggle-button").classList.add("active");
     } else if (activeButtons.length > 1) {
-      // If both buttons are toggled, keep only the first one toggled
       activeButtons.forEach(function (button, index) {
         if (index !== 0) {
           button.classList.remove("active");
@@ -370,15 +341,11 @@ window.addEventListener("resize", function () {
   }
 });
 function ToggleButtonsOnStart() {
-  // Check if it's a mobile device
   var isMobile = window.matchMedia("(max-width: 767px)").matches;
 
-  // Toggle buttons based on device type
   if (isMobile) {
-    // If in mobile view, toggle the first button
     document.querySelector(".toggle-button").classList.add("active");
   } else {
-    // If in desktop view, toggle both buttons
     document.querySelectorAll(".toggle-button").forEach(function (button) {
       button.classList.add("active");
     });
@@ -420,3 +387,5 @@ function loggedchecker() {
   if (loggedin != "true")
     window.location.href = "../HTML/" + lang + "Login.html";
 }
+try {
+} catch (error) {}

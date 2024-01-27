@@ -63,8 +63,8 @@
 }
 
 #MapContainer {
+  position: relative;
   flex: 1;
-  height: calc(100vh - 3rem);
 }
 
 #MapContainer.both {
