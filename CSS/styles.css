@@ -27,7 +27,7 @@
   background-color: #e6f9af;
   width: 100%;
   overflow: scroll;
-  height: 89%;
+  height: 90%;
 }
 
 .magcontainer {
@@ -147,7 +147,7 @@
   position: relative;
   z-index: 100;
   padding: 0.5rem;
-  height: 7rem;
+  height: 10%;
   background-color: #e6f9af;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
