@@ -244,3 +244,14 @@
 #MapContainer.inactive {
   visibility: hidden;
 }
+.leaflet-bottom {
+  margin-bottom: 1.2rem;
+}
+@media screen and (max-width: 768px) {
+  #sortiranje {
+    height: 15%;
+  }
+  #EQlist {
+    height: 85%;
+  }
+}

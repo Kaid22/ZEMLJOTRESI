@@ -395,3 +395,6 @@ function ZoomControl(map) {
   });
   zoomControl.addTo(map);
 }
+document.querySelector(
+  ".leaflet-control-zoom .leaflet-bar .leaflet-control"
+).style.marginTop = "-20px";
