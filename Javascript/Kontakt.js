@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   netacnoporuka = document.getElementById("porukanetacno");
 });
 function Posaljiporuku() {
+  console.log(proveriJezik());
   var netacno = false;
   if (!containsOnlyLetters(ime.value)) {
     if (proveriJezik() == "sr")
@@ -106,6 +107,7 @@ window.addEventListener("click", function (event) {
   }
 });
 function proveriJezik() {
+  currentURL = window.location.href;
   const lang = currentURL.split("/").pop().slice(0, 2);
   return lang;
 }
