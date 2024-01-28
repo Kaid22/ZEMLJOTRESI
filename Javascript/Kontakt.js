@@ -19,35 +19,44 @@ document.addEventListener("DOMContentLoaded", function () {
 function Posaljiporuku() {
   var netacno = false;
   if (!containsOnlyLetters(ime.value)) {
-    netacnoime.innerHTML = "Polje prihvata samo slova";
+    if (proveriJezik() == "sr")
+      netacnoime.innerHTML = "Polje prihvata samo slova";
+    else netacnoime.innerHTML = "Field accepts only letters";
     netacnoime.style.color = "red";
     netacnoime.style.visibility = "visible";
 
     netacno = true;
   }
   if (!containsOnlyLetters(prezime.value)) {
-    netacnoprezime.innerHTML = "Polje prihvata samo slova";
+    if (proveriJezik() == "sr")
+      netacnoprezime.innerHTML = "Polje prihvata samo slova";
+    else netacnoime.innerHTML = "Field accepts only letters";
     netacnoprezime.style.color = "red";
     netacnoprezime.style.visibility = "visible";
 
     netacno = true;
   }
   if (!IsEmail(email.value)) {
-    netacnoemail.innerHTML = "Email adresa mora biti validna";
+    if (proveriJezik() == "sr")
+      netacnoemail.innerHTML = "Email adresa mora biti validna";
+    else netacnoemail.innerHTML = "Email address must be valid";
     netacnoemail.style.color = "red";
     netacnoemail.style.visibility = "visible";
 
     netacno = true;
   }
   if (poruka.value == "") {
-    netacnoporuka.innerHTML = "Poruka ne sme biti prazna";
+    if (proveriJezik() == "sr")
+      netacnoporuka.innerHTML = "Poruka ne sme biti prazna";
+    else netacnoporuka.innerHTML = "Message field can not be empty";
     netacnoporuka.style.color = "red";
     netacnoporuka.style.visibility = "visible";
 
     netacno = true;
   }
   if (!netacno) {
-    alert("Poruka je uspesno poslata");
+    if (proveriJezik() == "sr") alert("Poruka je uspesno poslata");
+    else alert("Message sent succesfully");
     ime.value = "";
     prezime.value = "";
     email.value = "";
@@ -96,3 +105,7 @@ window.addEventListener("click", function (event) {
     netacnoime.style.visibility = "hidden";
   }
 });
+function proveriJezik() {
+  const lang = currentURL.split("/").pop().slice(0, 2);
+  return lang;
+}

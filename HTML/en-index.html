@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rezultati</title>
+    <link rel="icon" href="../images/logo.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/SearchNavbar.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../images/logo.png" alt="Logo" />
+        <a id="HomeLogo" href="./sr-Landing.html">EQLog</a>
+      </div>
+      <ul class="nav-list">
+        <button class="toggle-button" id="list"></button>
+        <button class="toggle-button" id="globe"></button>
+      </ul>
+    </nav>
+    <div id="content">
+      <div id="SuperDuperContainer">
+        <div id="levo">
+          <div id="sortiranje">
+            <div id="BroDogContainer">
+              <p>Broj događaja:</p>
+              <p id="BrojZemljotresa">325</p>
+            </div>
+            <p id="sortirajpo">Sortiraj po:</p>
+            <div id="DropDugmad">
+              <div class="dropdown" id="PoMagnitudi">
+                <button onclick="PrikaziDD(this)" class="dropbtn" id="1">
+                  <span class="btnelement">Magnitudi</span>
+                  <span class="btnelement">▼</span>
+                </button>
+                <div class="dropdown-content">
+                  <a onclick="SortByMagnitude('asc')">Rastuće</a>
+                  <a onclick="SortByMagnitude('desc')">Opadajuće</a>
+                </div>
+              </div>
+              <div class="dropdown" id="PoVremenu">
+                <button onclick="PrikaziDD(this)" class="dropbtn" id="2">
+                  <span class="btnelement">Vremenu</span>
+                  <span class="btnelement">▼</span>
+                </button>
+                <div class="dropdown-content">
+                  <a onclick="SortByTime('asc')">Rastuće</a>
+                  <a onclick="SortByTime('desc')">Opadajuće</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="EQlist"></div>
+        </div>
+        <div id="MapContainer">
+          <div id="mapid"></div>
+        </div>
+      </div>
+    </div>
+    <div id="floating-window">
+      <div id="FWNaziv"></div>
+      <div id="FWPodaci">
+        <div id="FWpodaciLabel">
+          <p id="FWmagnitudalabel">Magnituda</p>
+          <p id="FWvremelabel">Vreme</p>
+          <p id="FWlokacijalabel">Lokacija</p>
+          <p id="FWdubinalabel">Dubina</p>
+        </div>
+        <div id="FWPodaciPodaci">
+          <p id="FWmagnituda"></p>
+          <p id="FWvreme"></p>
+          <p id="FWlokacija"></p>
+          <p id="FWdubina"></p>
+        </div>
+      </div>
+      <div id="FWDugmeConatiner">
+        <button id="FWZatvori" onclick="SakrijFW()">Zatvori</button>
+      </div>
+    </div>
+    <script src="../Javascript/checklogin.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="../Javascript/main.js"></script>
+  </body>
+</html>

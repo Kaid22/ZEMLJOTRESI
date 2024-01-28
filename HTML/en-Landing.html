@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="icon" href="../images/logo.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="../CSS/Landing.css" />
+    <link rel="stylesheet" href="../CSS/Navbar.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../images/logo.png" alt="Logo" />
+        <a id="HomeLogo" href="./en-Landing.html">EQLog</a>
+      </div>
+      <div class="hamburger-icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a class="link" href="./en-Onama.html">
+            <img class="navslika" src="../images/info-512.png" />About Us</a
+          >
+        </li>
+        <li>
+          <a class="link" href="./en-Kontakt.html"
+            ><img class="navslika" src="../images/icon.png" />Contact</a
+          >
+        </li>
+        <li>
+          <a class="link" onclick="PretragaLogovan()"
+            ><img
+              class="navslika"
+              src="../images/magnifying-glass-3-512.png"
+            />Pretraga</a
+          >
+        </li>
+        <li id="loginnav">
+          <a class="link" href="./en-Login.html"
+            ><img class="navslika" src="../images/user-512.png" />Log in</a
+          >
+        </li>
+        <li id="logoutnav">
+          <a class="link" onclick="LogOut()"
+            ><img class="navslika" src="../images/logout-512.png" />Log out
+            se</a
+          >
+        </li>
+        <li id="langswitcher">
+          <button id="SR" onclick="PredjiNaSrpski()">SR</button>
+          <button id="ENG" class="active" onclick="PredjiNaEngleski()">
+            EN
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <div id="content">
+      <div id="SuperDuperContainer">
+        <div id="NajnovijiZemljotres">
+          <h2>Newest Earthquake</h2>
+          <div id="mapaIPodaci">
+            <div id="map"></div>
+            <div id="PodaciIDugme">
+              <div id="FWPodaci">
+                <span>
+                  <p id="FWplacelabel">Place</p>
+                  <p id="FWplace" class="podatak"></p>
+                </span>
+                <span>
+                  <p id="FWmagnitudalabel">Magnitude</p>
+                  <p id="FWmagnituda" class="podatak"></p>
+                </span>
+                <span>
+                  <p id="FWvremelabel">Time</p>
+                  <p id="FWvreme" class="podatak"></p>
+                </span>
+                <span>
+                  <p id="FWlokacijalabel">Location</p>
+                  <p id="FWlokacija" class="podatak"></p>
+                </span>
+                <span>
+                  <p id="FWdubinalabel">Depth</p>
+                  <p id="FWdubina" class="podatak"></p>
+                </span>
+              </div>
+              <div id="dugme">
+                <button onclick="IdinaPretragu()">Search Catalog</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2>Mercalli earthquake scale</h2>
+        <div id="Omagnitudi">
+          <div id="OMnesto">
+            <p>
+              The Mercalli scale, also known as the Mercalli-Mili scale,
+              represents one of the older ways of measuring the strength of
+              earthquakes. Developed during the 19th century, this scale was
+              originally based on observations and subjective experiences of
+              people after the earthquake. It was later modified and expanded by
+              an American engineer and seismologist Charles F. Milley.
+            </p>
+
+            <p>
+              The scale consists of ten degrees, numbered from 1 to 10, pri
+              where each degree describes different levels of earthquake
+              intensity. This scale is specifically focused on describing the
+              impact of earthquakes on human environment and objects, instead of
+              measuring physical characteristics ground shaking itself.
+            </p>
+
+            <p>
+              At entry levels, such as "Micro" (1) or "Minor" (2), earthquakes
+              are usually imperceptible or felt by few people without causing
+              damage. With increasing degrees, like "Moderate" (5) or "Strong"
+              (6), the intensity of the earthquake is increasing, with the
+              possibility of serious ones damage to buildings and the
+              environment. The highest level, "Extreme" (10), means complete
+              destruction, severe damage or collapse of all building in the
+              affected area.
+            </p>
+
+            <p>
+              It is important to note that, although the Mercalli scale was
+              significant in past, modern approaches to seismic evaluation often
+              use others methods like Earthquake Magnitude and Earthquake
+              Intensity. Magnitude measures the energy released during an
+              earthquake, while Intensity estimates the effects of an earthquake
+              at a specific location.
+            </p>
+
+            <p>
+              In conclusion, the Mercalli Scale remains part of the history of
+              seismology and contributed to the understanding of the intensity
+              of earthquakes, although today often combined with more modern
+              methods for more precise analysis it shakes.
+            </p>
+          </div>
+          <div id="OMnesto2">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mag.</th>
+                  <th>Intensity</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Micro</td>
+                  <td>Microquake, not felt.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Minor</td>
+                  <td>Felt by some people, no damage.</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Light</td>
+                  <td>Felt by many people, no damage to buildings.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Moderate</td>
+                  <td>Noticeable shaking, minor structural damage.</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Strong</td>
+                  <td>
+                    Can cause serious damage to poorly constructed buildings.
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Major</td>
+                  <td>
+                    Can be destructive in areas up to about 100 miles in
+                    populated areas.
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Great</td>
+                  <td>Can cause serious damage in a wider area.</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Great</td>
+                  <td>Can cause serious damage in a wider area.</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Massive</td>
+                  <td>
+                    Destructive over areas several thousand miles in diameter.
+                  </td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Extreme</td>
+                  <td>
+                    Total destruction, serious damage, or collapse of all
+                    buildings.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../Javascript/hamburger.js"></script>
+    <script src="../Javascript/checklogin.js"></script>
+    <script src="../Javascript/Landing.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  </body>
+</html>

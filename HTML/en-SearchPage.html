@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/searchpage.css" />
+    <link rel="stylesheet" href="../CSS/Navbar.css" />
+    <title>Pretraga</title>
+    <link rel="icon" href="../images/logo.png" type="image/png" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../images/logo.png" alt="Logo" />
+        <a id="HomeLogo" href="./en-Landing.html">EQLog</a>
+      </div>
+      <div class="hamburger-icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a class="link" href="./en-Onama.html">
+            <img class="navslika" src="../images/info-512.png" />About Us</a
+          >
+        </li>
+        <li>
+          <a class="link" href="./en-Kontakt.html"
+            ><img class="navslika" src="../images/icon.png" />Contact</a
+          >
+        </li>
+        <li>
+          <a class="link" onclick="PretragaLogovan()"
+            ><img
+              class="navslika"
+              src="../images/magnifying-glass-3-512.png"
+            />Pretraga</a
+          >
+        </li>
+        <li id="loginnav">
+          <a class="link" href="./en-Login.html"
+            ><img class="navslika" src="../images/user-512.png" />Log in</a
+          >
+        </li>
+        <li id="logoutnav">
+          <a class="link" onclick="LogOut()"
+            ><img class="navslika" src="../images/logout-512.png" />Log out
+            se</a
+          >
+        </li>
+        <li id="langswitcher">
+          <button id="SR" onclick="PredjiNaSrpski()">SR</button>
+          <button id="ENG" class="active" onclick="PredjiNaEngleski()">
+            EN
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <div id="content">
+      <div id="Searchbox">
+        <div id="OsnovnaPodesavanja">
+          <span id="OPnaslov">Basic Settings</span>
+          <div id="timemagbox">
+            <div id="magbox">
+              <span>Magnitude</span>
+              <div class="radiobox" id="radiomagbox">
+                <label>
+                  <input
+                    type="radio"
+                    name="magnituda"
+                    value="4.5"
+                    checked
+                    onclick="disableMag()"
+                  />
+                  4.5+
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="magnituda"
+                    value="2.5"
+                    onclick="disableMag()"
+                  />
+                  2.5+
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="magnituda"
+                    value="Drugo"
+                    onclick="enableMag()"
+                  />
+                  Custom
+                </label>
+              </div>
+              <div class="custombox">
+                <label for="maxmagnitude">Maksimalna</label>
+                <input type="text" id="maxmagnitude" disabled />
+                <label for="minmagnitude">Minimalna</label>
+                <input type="text" id="minmagnitude" disabled />
+              </div>
+            </div>
+            <div id="timebox">
+              <span>Time</span>
+              <div class="radiobox" id="radiotimebox">
+                <label>
+                  <input
+                    type="radio"
+                    name="vreme"
+                    value="7"
+                    checked
+                    onclick="disableTime()"
+                  />
+                  Last 7 days
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="vreme"
+                    value="30"
+                    onclick="disableTime()"
+                  />
+                  Last 30 days
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    name="vreme"
+                    value="Drugo"
+                    onclick="enableTime()"
+                  />
+                  Custom
+                </label>
+              </div>
+              <div class="custombox">
+                <label for="starttime">Start</label>
+                <input value="2014-01-01" type="date" id="starttime" disabled />
+                <label for="endtime">End</label>
+                <input value="2014-01-02" id="endtime" type="date" disabled />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="NaprednaPodesavanja">
+          <span id="NPnaslov">Advanced Settings</span>
+          <div id="NapGore">
+            <div id="GeoReg">
+              <span class="NazivKategorije">Geographic region</span>
+              <span id="disclaimer"
+                >Coordinates in decimal form. North must be greater than south,
+                East must be greater than West.</span
+              >
+              <div id="koordinate">
+                <div id="Sever">
+                  <label for="minlatitude">North</label>
+                  <input
+                    max="90"
+                    min="=90"
+                    type="number"
+                    id="minlatitude"
+                    class="koordinata"
+                  />
+                </div>
+                <div id="IstokZapad">
+                  <div id="Zapad">
+                    <label for="maxlongitude">West</label>
+                    <input
+                      type="number"
+                      max="180"
+                      min="-180"
+                      id="minlongitude"
+                      class="koordinata"
+                    />
+                  </div>
+                  <div id="Istok">
+                    <label for="minlongitude">East</label>
+                    <input
+                      type="number"
+                      max="180"
+                      min="-180"
+                      id="maxlongitude"
+                      class="koordinata"
+                    />
+                  </div>
+                </div>
+                <div id="Jug">
+                  <label for="maxlatitude">South</label>
+                  <input
+                    max="90"
+                    min="=90"
+                    type="number"
+                    id="maxlatitude"
+                    class="koordinata"
+                  />
+                </div>
+              </div>
+            </div>
+            <div id="Dubina">
+              <span class="NazivKategorije">Depth</span>
+              <label for="maxdepth">Maximum</label>
+              <input type="text" id="maxdepth" />
+              <label for="mindepth">Minimum</label>
+              <input type="text" id="mindepth" />
+            </div>
+          </div>
+          <div id="NapDole">
+            <div id="Krug">
+              <span class="NazivKategorije">Circle</span>
+              <label for="latitude">Center Latitude</label>
+              <input type="text" id="latitude" />
+              <label for="longitude">Center Longitude</label>
+              <input type="text" id="longitude" />
+              <label for="maxradiuskm">Radius in km</label>
+              <input type="text" id="maxradiuskm" />
+            </div>
+            <div id="BrOrder">
+              <span class="NazivKategorije">Results formatting</span>
+              <label for="limit">Maximum number of results</label>
+              <input id="limit" type="number" />
+              <label for="orderby">Sort By</label>
+              <select id="orderby">
+                <option value="time">Time - Newest First</option>
+                <option value="time-asc">Time - Oldest First</option>
+                <option value="magnitude">Magnitude - Biggest First</option>
+                <option value="magnitude-asc">
+                  Magnitude - Smallest First
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="buttonbox">
+          <button id="Search" onclick="Stisnutodugme()">Search</button>
+        </div>
+      </div>
+    </div>
+    <script src="../Javascript/searchpagescript.js"></script>
+  </body>
+  <script>
+    const hamburger = document.querySelector(".hamburger-icon");
+    const navList = document.querySelector(".nav-list");
+
+    hamburger.addEventListener("click", () => {
+      navList.classList.toggle("show");
+      hamburger.classList.toggle("active");
+    });
+  </script>
+  <script src="../Javascript/checklogin.js"></script>
+</html>

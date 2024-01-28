@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kontakt</title>
+    <link rel="icon" href="../images/logo.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="../CSS/Navbar.css" />
+    <link rel="stylesheet" href="../CSS/Kontakt.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../images/logo.png" alt="Logo" />
+        <a id="HomeLogo" href="./en-Landing.html">EQLog</a>
+      </div>
+      <div class="hamburger-icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a class="link" href="./en-Onama.html">
+            <img class="navslika" src="../images/info-512.png" />About Us</a
+          >
+        </li>
+        <li>
+          <a class="link" href="./en-Kontakt.html"
+            ><img class="navslika" src="../images/icon.png" />Contact</a
+          >
+        </li>
+        <li>
+          <a class="link" onclick="PretragaLogovan()"
+            ><img
+              class="navslika"
+              src="../images/magnifying-glass-3-512.png"
+            />Pretraga</a
+          >
+        </li>
+        <li id="loginnav">
+          <a class="link" href="./en-Login.html"
+            ><img class="navslika" src="../images/user-512.png" />Log in</a
+          >
+        </li>
+        <li id="logoutnav">
+          <a class="link" onclick="LogOut()"
+            ><img class="navslika" src="../images/logout-512.png" />Log out
+            se</a
+          >
+        </li>
+        <li id="langswitcher">
+          <button id="SR" onclick="PredjiNaSrpski()">SR</button>
+          <button id="ENG" class="active" onclick="PredjiNaEngleski()">
+            EN
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <div id="content">
+      <div id="Kontaktforma">
+        <div id="levo">
+          <div id="levogore">
+            <h2>Contact us</h2>
+            <p>
+              If you have questions, recommendations, suggestions, or remarks in
+              connection to the site, enter your information and contact us.
+            </p>
+          </div>
+          <div id="levodole">
+            <button onclick="Posaljiporuku()">Send message</button>
+          </div>
+        </div>
+        <div id="desno">
+          <div id="imeprezime">
+            <div id="ime">
+              <span class="nazivi">Name</span>
+              <input id="imeinput" type="text" placeholder="Ime" />
+              <span class="netacnopolje" id="imenetacno">A</span>
+            </div>
+            <div id="prezime">
+              <span class="nazivi">Last Name</span>
+              <input id="prezimeinput" type="text" placeholder="Prezime" />
+              <span class="netacnopolje" id="prezimenetacno">A</span>
+            </div>
+          </div>
+          <div id="email">
+            <span class="nazivi">Email</span>
+            <input
+              id="emailinput"
+              type="email"
+              placeholder="Vasa Email adresa"
+            />
+            <span class="netacnopolje" id="emailnetacno">A</span>
+          </div>
+          <div id="poruka">
+            <span class="nazivi">Your message</span>
+            <textarea id="porukainput" placeholder="Vasa Poruka"></textarea>
+            <span class="netacnopolje" id="porukanetacno">A</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../Javascript/Kontakt.js"></script>
+    <script src="../Javascript/hamburger.js"></script>
+    <script src="../Javascript/checklogin.js"></script>
+  </body>
+</html>
