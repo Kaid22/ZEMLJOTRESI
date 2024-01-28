@@ -31,7 +31,7 @@ function Posaljiporuku() {
   if (!containsOnlyLetters(prezime.value)) {
     if (proveriJezik() == "sr")
       netacnoprezime.innerHTML = "Polje prihvata samo slova";
-    else netacnoime.innerHTML = "Field accepts only letters";
+    else netacnoprezime.innerHTML = "Field accepts only letters";
     netacnoprezime.style.color = "red";
     netacnoprezime.style.visibility = "visible";
 
