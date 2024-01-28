@@ -15,7 +15,7 @@
     <nav class="navbar">
       <div class="logo">
         <img src="../images/logo.png" alt="Logo" />
-        <a id="HomeLogo" href="./sr-Landing.html">EQLog</a>
+        <a id="HomeLogo" href="./en-Landing.html">EQLog</a>
       </div>
       <ul class="nav-list">
         <button class="toggle-button" id="list"></button>
@@ -27,29 +27,29 @@
         <div id="levo">
           <div id="sortiranje">
             <div id="BroDogContainer">
-              <p>Broj događaja:</p>
+              <p>Number of events:</p>
               <p id="BrojZemljotresa">325</p>
             </div>
-            <p id="sortirajpo">Sortiraj po:</p>
+            <p id="sortirajpo">Sort By:</p>
             <div id="DropDugmad">
               <div class="dropdown" id="PoMagnitudi">
                 <button onclick="PrikaziDD(this)" class="dropbtn" id="1">
-                  <span class="btnelement">Magnitudi</span>
+                  <span class="btnelement">Magnitude</span>
                   <span class="btnelement">▼</span>
                 </button>
                 <div class="dropdown-content">
-                  <a onclick="SortByMagnitude('asc')">Rastuće</a>
-                  <a onclick="SortByMagnitude('desc')">Opadajuće</a>
+                  <a onclick="SortByMagnitude('asc')">Ascending</a>
+                  <a onclick="SortByMagnitude('desc')">Descending</a>
                 </div>
               </div>
               <div class="dropdown" id="PoVremenu">
                 <button onclick="PrikaziDD(this)" class="dropbtn" id="2">
-                  <span class="btnelement">Vremenu</span>
+                  <span class="btnelement">Time</span>
                   <span class="btnelement">▼</span>
                 </button>
                 <div class="dropdown-content">
-                  <a onclick="SortByTime('asc')">Rastuće</a>
-                  <a onclick="SortByTime('desc')">Opadajuće</a>
+                  <a onclick="SortByTime('asc')">Ascending</a>
+                  <a onclick="SortByTime('desc')">Descending</a>
                 </div>
               </div>
             </div>
@@ -65,10 +65,10 @@
       <div id="FWNaziv"></div>
       <div id="FWPodaci">
         <div id="FWpodaciLabel">
-          <p id="FWmagnitudalabel">Magnituda</p>
-          <p id="FWvremelabel">Vreme</p>
-          <p id="FWlokacijalabel">Lokacija</p>
-          <p id="FWdubinalabel">Dubina</p>
+          <p id="FWmagnitudalabel">Magnitude</p>
+          <p id="FWvremelabel">Time</p>
+          <p id="FWlokacijalabel">Location</p>
+          <p id="FWdubinalabel">Depth</p>
         </div>
         <div id="FWPodaciPodaci">
           <p id="FWmagnituda"></p>
@@ -78,7 +78,7 @@
         </div>
       </div>
       <div id="FWDugmeConatiner">
-        <button id="FWZatvori" onclick="SakrijFW()">Zatvori</button>
+        <button id="FWZatvori" onclick="SakrijFW()">Close</button>
       </div>
     </div>
     <script src="../Javascript/checklogin.js"></script>
