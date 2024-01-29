@@ -48,7 +48,7 @@ function Posaljiporuku() {
   }
   if (!PorukaRegex(poruka.value)) {
     if (proveriJezik() == "sr")
-      netacnoporuka.innerHTML = "Recenice moraju biti sintaksički tačne";
+      netacnoporuka.innerHTML = "Rečenice moraju biti sintaksički tačne";
     else netacnoporuka.innerHTML = "Sentences need to have the correct syntax";
     netacnoporuka.style.color = "red";
     netacnoporuka.style.visibility = "visible";
@@ -77,7 +77,8 @@ function EmailRegex(str) {
   return regex.test(str);
 }
 function PorukaRegex(str) {
-  const regex = /^(?:(?:(?:[A-Z][a-z]*\s?)+[.?!])\s?)+$/;
+  const regex = /\b[^.!?]+[.!?]+$/;
+  console.log(str);
   return regex.test(str);
 }
 window.addEventListener("click", function (event) {
