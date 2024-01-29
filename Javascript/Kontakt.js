@@ -19,37 +19,37 @@ document.addEventListener("DOMContentLoaded", function () {
 function Posaljiporuku() {
   console.log(proveriJezik());
   var netacno = false;
-  if (!containsOnlyLetters(ime.value)) {
+  if (!ImeRegex(ime.value)) {
     if (proveriJezik() == "sr")
-      netacnoime.innerHTML = "Polje prihvata samo slova";
-    else netacnoime.innerHTML = "Field accepts only letters";
+      netacnoime.innerHTML = "Polje prihvata samo 5-9 velikih slova";
+    else netacnoime.innerHTML = "Field accepts only 5-9 uppercase letters";
     netacnoime.style.color = "red";
     netacnoime.style.visibility = "visible";
 
     netacno = true;
   }
-  if (!containsOnlyLetters(prezime.value)) {
+  if (!PrezimeRegex(prezime.value)) {
     if (proveriJezik() == "sr")
-      netacnoprezime.innerHTML = "Polje prihvata samo slova";
-    else netacnoprezime.innerHTML = "Field accepts only letters";
+      netacnoprezime.innerHTML = "Polje prihvata samo 3-20 velikih slova";
+    else netacnoprezime.innerHTML = "Field accepts only 3-20 uppercase letters";
     netacnoprezime.style.color = "red";
     netacnoprezime.style.visibility = "visible";
 
     netacno = true;
   }
-  if (!IsEmail(email.value)) {
+  if (!EmailRegex(email.value)) {
     if (proveriJezik() == "sr")
-      netacnoemail.innerHTML = "Email adresa mora biti validna";
-    else netacnoemail.innerHTML = "Email address must be valid";
+      netacnoemail.innerHTML = "Email adresa mora sadžati .edu";
+    else netacnoemail.innerHTML = "Email address must contain .edu";
     netacnoemail.style.color = "red";
     netacnoemail.style.visibility = "visible";
 
     netacno = true;
   }
-  if (poruka.value == "") {
+  if (!PorukaRegex(poruka.value)) {
     if (proveriJezik() == "sr")
-      netacnoporuka.innerHTML = "Poruka ne sme biti prazna";
-    else netacnoporuka.innerHTML = "Message field can not be empty";
+      netacnoporuka.innerHTML = "Recenice moraju biti sintaksički tačne";
+    else netacnoporuka.innerHTML = "Sentences need to have the correct syntax";
     netacnoporuka.style.color = "red";
     netacnoporuka.style.visibility = "visible";
 
@@ -64,17 +64,26 @@ function Posaljiporuku() {
     poruka.value = "";
   }
 }
-function containsOnlyLetters(str) {
-  const regex = /^[a-zA-Z]+$/;
+function ImeRegex(str) {
+  const regex = /^[A-Z]{5,9}$/;
   return regex.test(str);
 }
-function IsEmail(str) {
-  const regex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
+function PrezimeRegex(str) {
+  const regex = /[A-Z]{3,20}/;
+  return regex.test(str);
+}
+function EmailRegex(str) {
+  const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(edu)[A-Z|a-z]{0,}$/;
+  return regex.test(str);
+}
+function PorukaRegex(str) {
+  const regex = /^(?:(?:(?:[A-Z][a-z]*\s?)+[.?!])\s?)+$/;
   return regex.test(str);
 }
 window.addEventListener("click", function (event) {
   if (event.target.id == "imeinput") {
-    netacnoime.innerHTML = "a-z A-Z";
+    if (proveriJezik() == "sr") netacnoime.innerHTML = "5-9 znakova [A-Z]";
+    else netacnoime.innerHTML = "5-9 characters [A-Z]";
     netacnoime.style.color = "white";
     netacnoime.style.visibility = "visible";
     netacnoprezime.style.visibility = "hidden";
@@ -82,7 +91,8 @@ window.addEventListener("click", function (event) {
     netacnoporuka.style.visibility = "hidden";
   }
   if (event.target.id == "prezimeinput") {
-    netacnoprezime.innerHTML = "a-z A-Z";
+    if (proveriJezik() == "sr") netacnoprezime.innerHTML = "3-20 znakova [A-Z]";
+    else netacnoprezime.innerHTML = "3-20 characters [A-Z]";
     netacnoprezime.style.color = "white";
     netacnoprezime.style.visibility = "visible";
     netacnoime.style.visibility = "hidden";
@@ -90,7 +100,7 @@ window.addEventListener("click", function (event) {
     netacnoporuka.style.visibility = "hidden";
   }
   if (event.target.id == "emailinput") {
-    netacnoemail.innerHTML = "Example@gmail.com";
+    netacnoemail.innerHTML = "Example@gmail.edu";
     netacnoemail.style.color = "white";
     netacnoemail.style.visibility = "visible";
     netacnoprezime.style.visibility = "hidden";
@@ -98,7 +108,9 @@ window.addEventListener("click", function (event) {
     netacnoporuka.style.visibility = "hidden";
   }
   if (event.target.id == "porukainput") {
-    netacnoporuka.innerHTML = "Vasa poruka ide ovde";
+    if (proveriJezik() == "sr")
+      netacnoporuka.innerHTML = "Vasa poruka ide ovde";
+    else netacnoporuka.innerHTML = "Your message goes here";
     netacnoporuka.style.color = "white";
     netacnoporuka.style.visibility = "visible";
     netacnoprezime.style.visibility = "hidden";
