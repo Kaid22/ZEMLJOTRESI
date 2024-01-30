@@ -40,10 +40,10 @@ function PostaviPodatke(place, magnitude, latituda, longituda, depth, time) {
   const fwdubina = document.getElementById("FWdubina");
 
   fwplace.innerHTML = place;
-  fwmagnituda.innerHTML = magnitude;
+  fwmagnituda.innerHTML = magnitude.toFixed(2);
   fwVreme.innerHTML = getDate(time) + " (UTC)";
   fwlokacija.innerHTML = NapraviLokaciju(latituda, longituda);
-  fwdubina.innerHTML = depth + "km";
+  fwdubina.innerHTML = depth.toFixed(2) + "km";
 }
 function getDate(timestamp) {
   console.log(timestamp);
@@ -69,14 +69,14 @@ function getDate(timestamp) {
 function NapraviLokaciju(lat, lng) {
   var str;
   if (lat >= 0) {
-    str = lat + "°N  ";
+    str = lat.toFixed(2) + "°N  ";
   } else {
-    str = Math.abs(lat) + "°S  ";
+    str = Math.abs(lat).toFixed(2) + "°S  ";
   }
   if (lng >= 0) {
-    str += lng + "°W";
+    str += lng.toFixed(2) + "°W";
   } else {
-    str += Math.abs(lng) + "°E";
+    str += Math.abs(lng).toFixed(2) + "°E";
   }
   return str;
 }
